@@ -1,0 +1,15 @@
+// ######## 1st lecture ############
+// Why use pipes: for validation and transaformation
+validation: evaluate input data and simply pass it through unchanged; otherwise throw an error 
+Transformation: Transform the imput data into valid Form, ex. string into integer 
+
+Types of pipes:
+Built-in: Nest comes with nine pipes available out of the box exported from the @nestjs/common package
+Custom pipes: you can build your own 
+
+//########### 2nd lecture ############
+// we just understood the requirement, that if we are passing query param as a limit and page then it is going as string but if we want as a integer then will validate and format using pipes 
+
+//########### 3rd lecture ############
+// built in nine package in nest js: 1. ValidationPipe, ParseIntPipe, parseFloatPipe, ParseBoolPipe, ParseArrayPipe, ParseUUIDPipe, ParseEnumPipe, DefaultValuePipe, parseFilePipes
+@Param('id', parseintPipe);
