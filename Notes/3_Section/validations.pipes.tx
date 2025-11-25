@@ -13,3 +13,66 @@ Custom pipes: you can build your own
 //########### 3rd lecture ############
 // built in nine package in nest js: 1. ValidationPipe, ParseIntPipe, parseFloatPipe, ParseBoolPipe, ParseArrayPipe, ParseUUIDPipe, ParseEnumPipe, DefaultValuePipe, parseFilePipes
 @Param('id', parseintPipe);
+
+//************ 4th lecture ************
+validation and transaformation for query paramiters it is same as above 
+
+//************ 5th lecture ************
+DTO(data transfar object): we use to validate the request and response body, works as custome pipes
+dto is a simple class 
+export class UserDTO{
+    @IsEmail()
+    @IsNotEmpty()
+    email:string
+}
+
+//*********** 6th lecture *************
+create your own DTO 
+need to install class-validator to validate the each and every field
+npm i class-validator@0.41.1
+all decorators will be added through class-validator 
+export class CreateUserDto{
+    @IsString()
+    @IsNotEmpty()
+    @MinLenght(3)
+    @MaxLength(6)
+    firstName:string;
+
+     @IsString()
+    @IsOptional()
+    lastName:string;
+
+     @IsEmail()
+    @IsNotEmpty()
+    email:string;
+
+     @IsString()
+    @IsNotEmpty()
+    @MinLenght(8)
+    @Matches(//, {
+        message:'Minimum eight char required, one leter is reauired, one number is required '
+    }) //give a regular expression 
+    password:string
+}
+
+//************** 7th lecture ****************
+Global pipes and Avoding Malicious request
+
+why global pipes important, user can add any extra information through DTO which should not add to request
+to prevent the such kind of a behaviour we should use global validation in app module file 
+
+1. post request 
+@Post()
+public createUsers(@Body() createUserDto:  CreateUserDto){
+    console.log(createUserDto);
+    return 'You sent the post request'
+} //client can share data which can harm
+
+//this will only allow user to send data as per dtos not more than that
+app.useGlobalPipe({
+    new ValidationPipe({
+        whitelist:true,
+        forbidNonWhitelisted:true //this will not process the request with extra value than DTO
+    })
+})
+
