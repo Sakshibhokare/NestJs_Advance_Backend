@@ -1,0 +1,79 @@
+*************** 1st Lecture ********************
+dependency Injection 
+what is dependency Injection: when we create a class which is required multiple times with multiple other classes we need to handle the dependency injection to prevent the initiastion of that class every time. 
+why it is important :
+
+example: 
+class Users{
+    constructor(){
+        console.log('user contructor');
+    }
+    public 'firstName' = 'john';
+}
+
+class Post{
+    constructore(private user = new Users()){
+        console.log('post constructor');
+    }
+}
+
+class Page{
+    constructor(private user = new Users()){
+        console.log('Page constructor');
+    }
+}
+
+const post = new Post();
+const page= new Page(); 
+
+Output will be 
+user contructor
+post contructor
+user contructor
+page contructor
+
+note: here we are instanciting the class twice(user), beacuse the new intance we are creating everytime 
+*********
+we can do it like 
+class Post{
+    constructore(private user :  Users){
+        console.log('post constructor');
+    }
+}
+
+class Page{
+    constructor(private user =  Users){
+        console.log('Page constructor');
+    }
+}
+
+now instead of creating the instance, we have passed as dependency 
+Nest js will handle that dependency 
+
+we will only cerate the instance once
+const user = new User();
+
+
+//Injecting the user as a dependency 
+const post = new post (user);
+const page = new page (user);
+
+***********
+NestJS automatically creates and manages their instances in a dependency injection container.
+
+You just inject dependencies in the constructor, and NestJS handles the rest.
+
+Example:
+
+@Injectable()
+class Users {}
+
+@Injectable()
+class Post {
+  constructor(private user: Users) {}
+}
+//************************************  2nd Lecture ***************************************
+why Important 
+for decoupling: DI help in decoupling components and layers in an application 
+Ease of testing: with Di, it make straightforward to test classes by moking there dependency 
+Resuablity: Components and services design to be reused across deferent part
