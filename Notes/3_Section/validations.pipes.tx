@@ -73,6 +73,28 @@ app.useGlobalPipe({
     new ValidationPipe({
         whitelist:true,
         forbidNonWhitelisted:true //this will not process the request with extra value than DTO
+        transform:true //it transform the request object to instance of that DTO class after validation, to improve the type sefety 
     })
 })
 
+//********************************************
+we can create DTO for params as well 
+params and queries are comes as string so auto taransformation does not works
+we always need to use Type to change the tyoe 
+export class UserDto{
+    @IsOptional()
+    @IsInt()
+    @Type(()=>Number)
+    id?:number
+}
+
+
+
+//*******************************************
+Using mapped Types To Avoid Code Duplication 
+for partially updating we do not need to create the one more dto we can use the existing one 
+for patch request 
+//need to import PartialType from mapped-types 
+export class patchUserDto extends PartialType((createUserDto)){
+
+}
