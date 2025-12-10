@@ -74,6 +74,95 @@ class Post {
 }
 //************************************  2nd Lecture ***************************************
 why Important 
-for decoupling: DI help in decoupling components and layers in an application 
-Ease of testing: with Di, it make straightforward to test classes by moking there dependency 
-Resuablity: Components and services design to be reused across deferent part
+for decoupling: DI help in decoupling components and layers in an application, there is not coupling between user and post class  
+Ease of testing: with Di, it make straightforward to test classes by moking there dependency, you can test the functionality of post class by importing mock user class, without creating new instance of user class 
+Resuablity: Components and services design to be reused across deferent part, 
+
+How DI works:
+1. 
+
+Steps for DI:
+1. will use @Injectable()
+to Declare that this class is able to inject
+@Injectable()
+export class AppService{
+}
+
+2. Connect
+to connect that class we need to import in modules first
+@Module{{
+    import;[],
+    controllers:[AppController],
+    providers:[AppService]
+}}
+
+3. Inject
+@Controller()
+export class AppController{
+    constructor(private readonly appService: AppService){}
+
+    @Get()
+    getHello():string{
+        return this.appService.getHello();
+    }
+}
+
+
+**********************Lecture 3******************************
+Create user services
+import userService using DI steps 
+
+**********************Lecture 4****************************
+will create a APIs for getting user details
+service file:
+@Injectable()
+export class userService{
+    public getUsers(getUserParamDto: GetUserParamDTO, limit:number, page:number){
+        return [
+            {
+            "firstName":"john",
+            "lastName":"doe"
+        },
+    {
+        "firstName":"ram",
+        'lastName':"sham"
+
+    }]
+    }
+}
+
+*********************
+Controller file
+
+export class UserController{
+    constructor(private readonly userService: UserService){}
+
+    @Get(':/id')
+    public getUser(
+        @param() getUserParamDto: GetUserParamDTO,
+        @Query('limit', new DefaultValuePipe(10), ParseIntPipe) limit:number,
+        @Query('page', new DefaultValuePipe(1), ParseIntPipe) page:number
+    ){
+        return this.userService.getUsers(getUserParamDto, limit, page)
+    }
+}
+
+***********************Lecture 6 ********************************
+Types of dependency Injections 
+1. INTRA MODULAR dependencies
+
+user module
+    |
+User Controller
+    |
+User service
+    |
+Custom Class 
+
+2. Inter module dependencies: when two modules are dependent on each other 
+USerModule -> postModule i.e. UserService -> PostService 
+
+3. Circular dependencies: when two modules are dependent on each other 
+UserService -> <- AuthService
+
+**********************************************************
