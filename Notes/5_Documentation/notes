@@ -1,0 +1,56 @@
+in nest js we have two ways of documentation
+1. API Documentation :
+     For Client, uses OPEN API(swagger), Hosted with API
+2. Code Documentation: For Developers, uses COMPODOC, Generated inside APP 
+
+Enabbling swagger in nest js 
+we need to install swagger in our application 
+npm i @nestjs/swagger@7.3.0
+we need to configure swagger in main file 
+
+main.ts ->
+<!--
+Swagger configuration 
+ -->
+const config = new DocumentBuilder().setVersion('1.0').build();
+//Instantiate Document
+const document = SwaggerModule.createDocument(app, config);
+SwaggerModule.setup('api', app, document);
+
+await app.listen(3000);
+
+*****************************************************************
+we will provide more information about the application 
+in the document 
+
+const config = new DocumentBuilder()
+.setTitle('Nestjs masteclass - Blog app API)
+.setDescription('Use the base API usrl as')
+.setTermsOfService('https://hjbjbbbbm.com')
+.addServer()
+.setVersion('1.0')
+.build();
+
+const document = SwaggerModule.createDocument(app, config)
+
+
+****************************************************************
+decorators to use for controller 
+@ApiPropertyOptional({
+    description:"",
+    example:""
+})
+//this is for query 
+@ApiQuery({
+    name:'limit',
+    type:'number',
+    required:false,
+    description:'entry retured per query'
+})
+//what this api related to or what actually does 
+@ApiOperation({summary:'fetches the users'})
+
+@ApiResponse({
+    status:200,
+    description:"users fetch successfully"
+})
