@@ -166,3 +166,50 @@ USerModule -> postModule i.e. UserService -> PostService
 UserService -> <- AuthService
 
 **********************************************************
+providers in modules are those classes made using Injectable
+we have to add our service file to module so we can use in other modules 
+
+@Module({
+    controllers:[UserCotroller],
+    providers:[UserService],
+    exports:[UserService]
+})
+
+we will import entire UserModule into the postModule, but it doesnt mean that everything will be accessible, only the service will be accessible 
+@Module({
+    controllers:[PostController],
+    providers:[PostService],
+    imports:[UserModule]
+})
+
+**********************************************************************
+create authmodule along with service and controller 
+nest generate module auth 
+nest generate controller auth --no-spec 
+nest generate service auth/providers/auth --flat --no-spec // this for generating service at specific location 
+
+*********************************************************************
+for Circular dependency injection we need to use forwardRef function in service as well as in module 
+
+Modules:
+
+@Module({
+    imports:[forwardRef()=>{UserModule}]
+})
+
+@Module({
+    imports[forwardRef()=>{AuthModule}]
+})
+
+
+in service file
+we need Inject and forwardRef 
+@Injectable()
+export class AuthService{
+    constructor(
+        @Inject(forwardRef(()=>{UserService}))
+        private readonly userService: UserService
+    ){}
+}
+//similar for userService file 
+
