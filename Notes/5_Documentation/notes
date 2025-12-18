@@ -54,3 +54,99 @@ decorators to use for controller
     status:200,
     description:"users fetch successfully"
 })
+
+*******************************************************************
+Post type request for post controller and DTO 
+
+structure of request body to create a new post
+title: string 
+postType: enum(post, page, strory, series)
+slug: string
+status: enum(deaft, scheduled, review, published)
+contetnt?:string,
+schema?:string
+featuredImageUrl?:string
+publishOn:Date
+tags: string[]
+metaOptions:[{key:value}]
+
+we have enum file inside our DTO folder
+export enum PostType{
+    POST = 'post',
+    PAGE='page',
+    STORY = 'story',
+    SERIES = 'series'
+}
+export enum Poststatus{
+      DRAFT = 'draft',
+      SCHEDULED = 'scheduled',
+      REVIEW = 'review',
+      PUBLISHED = 'publised'
+}
+
+export class CreatePostMetaOptionsDTO{
+    @IsString()
+    @IsNotEmpty()
+    key:string;
+
+    @IsNotEmpty()
+    value:any;
+}
+
+// create post DTO 
+export class CreatePostDTO{
+    //adding validators
+    @IsString()
+    @MinLength(4)
+    @IsNotEmpty()
+    title:string;
+
+    @IsEnum(PostType)
+    @IsNotEmpty()
+    postType: PostType;
+
+    @IsString()
+    @IsNotEmpty()
+    @Matches(, {message:'A slug should be all small letters and uses only "-'}) we can pass regular expression
+    slug:string;
+
+    @IsEnum(Poststatus)
+    @IsNotEmpty()
+    status: Poststatus;
+
+    @IsString()
+    @IsOptional()
+    content?:string;
+   
+    @IsOption()
+    @IsJSON() when not parsible to json will throw an error 
+    schema?:string;
+
+    @IsOptional()
+    @IsUrl()
+    featuredImageUrl:string;
+
+    @IsISO8601() //this checks the data format 
+    @IsOptional()
+    publishOn: Date;
+
+    @IsOptional()
+    @IsArray()
+    @IsString({each:true}) // this will check if each values is string or not 
+    @MinLength(3, {each:true})
+    tags?:string[];
+
+    //nested object has two properties key and value
+    @IsOptional()
+    @IsArray()
+    @ValidateNested({each:true})  // coming from class transaformer not class validator 
+    @Type(()=>CreatePostMetaOptionsDTO)
+    metaOptions:CreatePostMetaOptionsDTO[];
+}
+
+
+// cerate new post endpoint
+export class PostController{
+    @Post()
+    public createPost(){}
+}
