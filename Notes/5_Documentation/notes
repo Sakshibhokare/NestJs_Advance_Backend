@@ -133,7 +133,7 @@ export class CreatePostDTO{
     @IsOptional()
     @IsArray()
     @IsString({each:true}) // this will check if each values is string or not 
-    @MinLength(3, {each:true})
+    @MinLength(3, {each:true}).
     tags?:string[];
 
     //nested object has two properties key and value
@@ -150,3 +150,5 @@ export class PostController{
     @Post()
     public createPost(){}
 }
+
+Using Swagger *************************************************

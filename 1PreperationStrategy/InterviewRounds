@@ -1,0 +1,276 @@
+Below is the **standard interview flow** you’ll face for **top product-based companies (India) and $70K+ remote roles**.
+This is **industry-accurate**, not theoretical — and I’ll explain **what they actually test**, **how to prepare**, and **where people fail**.
+
+---
+
+# 🧭 STANDARD INTERVIEW ROUNDS (BACKEND ENGINEER)
+
+## 0️⃣ Resume Shortlisting (Silent Killer)
+
+**Not a round, but most people fail here**
+
+### What they look for
+
+* Clean 1-page resume
+* Impact-based bullet points
+* Tech stack match (Nest/Java/Go)
+* Real projects (not tutorials)
+
+### How you pass
+
+* Numbers: latency ↓, throughput ↑
+* Clear architecture descriptions
+* Keywords: Redis, Kafka, AWS, Scaling
+
+📌 **Fail reason:** generic resumes
+
+---
+
+## 1️⃣ Recruiter / HR Screen (15–30 min)
+
+> This is NOT a formality
+
+### They check
+
+* Communication clarity
+* Role fit
+* Salary expectations
+* Availability (remote/onsite)
+* Visa/location clarity (for abroad)
+
+### Typical questions
+
+* “Tell me about yourself”
+* “What are you working on?”
+* “Why are you switching?”
+* “Expected compensation?”
+
+### How to crack
+
+* 2–3 minute crisp intro
+* Career story (Backend → scale → impact)
+* Market-aligned salary range
+
+📌 **Fail reason:** unclear goals, salary mismatch
+
+---
+
+## 2️⃣ DSA / Coding Round (45–60 min)
+
+> Mandatory for almost all companies
+
+### Format
+
+* Live coding (CoderPad / Hackerrank)
+* 1–2 problems
+* Language of your choice
+
+### Topics
+
+* Arrays, HashMaps
+* Trees, Graphs
+* Sliding window
+* BFS/DFS
+* Basic DP
+
+### What they actually test
+
+* Problem breakdown
+* Edge cases
+* Time/space complexity
+* Code clarity
+
+### How to pass
+
+* Talk while coding
+* Start with brute force → optimize
+* Handle edge cases explicitly
+
+📌 **Fail reason:** silent coding, panic, messy logic
+
+---
+
+## 3️⃣ Backend Fundamentals Round (45–60 min)
+
+> This separates **real backend engineers** from CRUD devs
+
+### Topics
+
+* REST API design
+* HTTP status codes
+* Auth (JWT, OAuth)
+* Database schema design
+* Transactions & isolation
+* Caching strategies
+* Error handling
+
+### Example questions
+
+* Design a login system
+* How would you design pagination?
+* How does JWT refresh work?
+* When does indexing hurt performance?
+
+### What they want
+
+* Clear reasoning
+* Real-world experience
+* Trade-offs
+
+📌 **Fail reason:** theory-only answers
+
+---
+
+## 4️⃣ System Design Round (60–90 min)
+
+> **MOST IMPORTANT FOR $70K+**
+
+### Typical systems
+
+* Chat system
+* Notification system
+* Feed
+* Payment system
+* URL shortener
+
+### What they evaluate
+
+* Requirement clarification
+* High-level architecture
+* DB choices
+* Scaling strategy
+* Failure handling
+* Trade-offs
+
+### Expected flow
+
+1. Clarify requirements
+2. High-level diagram
+3. Deep dive (DB, cache, queue)
+4. Bottlenecks
+5. Improvements
+
+📌 **Fail reason:** jumping to tech without thinking
+
+---
+
+## 5️⃣ Advanced Backend / Distributed Systems (45–60 min)
+
+> Seen in senior or strong product companies
+
+### Topics
+
+* Redis internals
+* Kafka consumer lag
+* Idempotency
+* Rate limiting
+* Sharding
+* CAP theorem
+* gRPC vs REST
+* WebSocket scaling
+
+### Example questions
+
+* How do you handle Kafka reprocessing?
+* How would you rate-limit APIs globally?
+* How to scale WebSockets to 1M users?
+
+📌 **Fail reason:** buzzword answers
+
+---
+
+## 6️⃣ Hiring Manager / Team Fit (30–60 min)
+
+> Cultural + ownership round
+
+### They assess
+
+* Problem ownership
+* Collaboration
+* Decision-making
+* Growth mindset
+
+### Typical questions
+
+* A production incident you handled
+* A bad design decision you made
+* Conflict with teammates
+* Mentoring juniors
+
+📌 **Fail reason:** blaming others, no learning mindset
+
+---
+
+## 7️⃣ Bar Raiser / Final Round (Selective)
+
+> FAANG-style or strong startups
+
+### Focus
+
+* Depth in one area
+* Long-term impact
+* Engineering judgment
+
+📌 **Fail reason:** shallow experience
+
+---
+
+## 8️⃣ HR / Offer Discussion
+
+> If you reached here — you’re almost in
+
+### They discuss
+
+* Compensation
+* Joining date
+* Location / remote setup
+
+📌 **Tip**
+Always negotiate politely — offers can move.
+
+---
+
+# 🧠 INTERVIEW ROUND WEIGHTAGE
+
+| Round         | Importance |
+| ------------- | ---------- |
+| Resume        | ⭐⭐⭐⭐⭐      |
+| DSA           | ⭐⭐⭐⭐       |
+| Backend       | ⭐⭐⭐⭐       |
+| System Design | ⭐⭐⭐⭐⭐      |
+| Communication | ⭐⭐⭐⭐⭐      |
+
+---
+
+## 🔥 WHY MOST PEOPLE FAIL (REAL REASONS)
+
+1. Over-focus on courses, under-focus on explanation
+2. Weak system design
+3. Poor communication
+4. Fake or shallow projects
+5. No real-world thinking
+
+---
+
+## 🎯 YOUR ADVANTAGE
+
+With:
+
+* NestJS mastery
+* System design prep
+* Real projects
+* Java + Go awareness
+
+You are **well above average**.
+
+---
+
+## 🧩 WHAT I CAN DO NEXT
+
+* Mock interview questions per round
+* “Tell me about yourself” script
+* System design answer templates
+* DSA pattern list
+* Salary negotiation guide
+
+Just tell me what you want next 👌
