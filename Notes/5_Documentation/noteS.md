@@ -145,7 +145,7 @@ export class CreatePostDTO{
 }
 
 
-// cerate new post endpoint
+## cerate new post endpoint
 export class PostController{
     @Post()
     public createPost(){}
