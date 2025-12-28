@@ -122,6 +122,7 @@ export class CreatePostDTO{
     @IsJSON() when not parsible to json will throw an error 
     schema?:string;
 
+
     @IsOptional()
     @IsUrl()
     featuredImageUrl:string;
