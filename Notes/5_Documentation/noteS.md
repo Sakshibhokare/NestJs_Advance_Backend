@@ -152,4 +152,93 @@ export class PostController{
     public createPost(){}
 }
 
-Using Swagger *************************************************
+
+## Using Swagger for documenattion  
+ @ApiProperty({
+    example:'this is a title',
+    description:'this is the title for blog post'
+ }) // the value will be added to api property section/ example value on swagger 
+ @IsString()
+ @MinLength(4)
+ @IsNotEmpty()
+ title:string;
+
+
+ @ApiProperty({
+    enum:postType,
+    description: 'Possible values, 'post','page', 'story''
+ })
+ @IsEnum(postType)
+ @IsNotEmpty()
+ postType:postType;
+
+ and so on
+
+ @ApiPropertyOptional({
+    description:'this is the content of the post'
+ })
+
+
+//nested object 
+ @ApiPropertyOptional({
+    type:'array',
+    required: false,
+    items:{
+        type:'object',
+        properties:{
+            key:{
+                type:'string',
+                description:'The can be any string identifier',
+                example:'sidebarEnabled'
+            },
+            vale{
+                type:'any',
+                description:"any value",
+                example:true
+            }
+        }
+    }
+ })
+
+
+## mapped types using swagger
+@ApiOperation({
+   summary:"Creates a new blog post"
+})
+
+@ApiResponse({
+    status:201,
+    description:"you get 201 response if your post is created sucessfully"
+})
+
+@Post()
+public createPost(@Body() createPostDto:CreatePostDTO){
+    console.log(createPostDto)
+}
+
+
+//mapp type
+@Patch()
+public updatePost(@Body() patchPostDto:any){
+    console.log(patchPostsDto);
+}
+
+//patch-post.dto.ts 
+//CreatePostDto properties will be optional
+export class PatchPostDto extends PartialType(CreatePostDto){ //PartialType comes from swagger package 
+    @ApiProperty({
+        description:"ID of post that needs to be updated"
+    })
+    @IsInt()
+    @IsNotEmpty()
+    id:number 
+}
+
+
+for running will create .http file
+PATCH http://localhost:3000/posts
+Content-Type: application/json
+
+{
+    "id":1234
+}
