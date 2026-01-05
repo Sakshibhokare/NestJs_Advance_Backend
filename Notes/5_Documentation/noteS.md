@@ -242,3 +242,30 @@ Content-Type: application/json
 {
     "id":1234
 }
+
+
+## Compodoc
+npm i compodoc/compodoc@1.1.23
+in package.json script section needs to add a command 
+"doc":"npx @compodoc/compodoc -p tsconfig.json -s --port 3001 --watch -d ./documentation"
+
+This command generates project documentation from TypeScript code and serves it locally on port 3001, automatically updating when the code changes.
+npx: Runs a package without installing it globally, Fetches @compodoc/compodoc if it’s not already installed
+
+@compodoc/compodoc: Compodoc is a documentation generator for Angular / TypeScript projects, It analyzes your source code and creates HTML documentation
+
+-p tsconfig.json: Tells Compodoc which TypeScript configuration to use
+
+-s: Serve the documentation using a local web server
+
+--port 3001: Runs the documentation server on port 3001
+
+--watch: Watches the source files for changes, Automatically regenerates the documentation when files change
+
+-d ./documentation: Specifies the output directory, Generated docs are saved in the ./documentation folder
+
+then finally npm run doc this creates new document and launches new server 
+
+## compodoc coverage /documentation coverage
+for keeping the coverage for compodoc we need to add a comment
+like /** */ starts with two star and ends with one star 
