@@ -5,7 +5,9 @@
 5. Projects 
 https://youtu.be/IJkYipYNEtI?si=dOWuCabgpitBR6Ki Redis, pubsub, message queue 
 
+Plan: Java and Go master Backend + System Design and Distributed System =70lpa -> cloud and infra =90+ -> AI ML or blockchain or any 
 
+Backend(java+go) -> Devops -> SRE -> blockchain/Ai Ml
 
 You’re already on a strong path. These things are **force multipliers**, not new mountains.
 
