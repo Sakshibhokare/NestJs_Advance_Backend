@@ -5,7 +5,7 @@
 5. Projects 
 https://youtu.be/IJkYipYNEtI?si=dOWuCabgpitBR6Ki Redis, pubsub, message queue 
 
-## Plan: Java and Go master Backend(DSA) + System Design(LLD and HLD) and Distributed System+ AWS + Devops + Core subjects + gen Ai agentic Ai + basic front end ======== Atlassian  + =70lpa -----------> cloud and infra =90+ -> AI ML or blockchain or any 
+## Plan: Java and Go master Backend(DSA) + System Design(LLD and HLD) and Distributed System+ AWS + Devops + Core subjects + gen Ai agentic Ai + basic front end + managerial round ======== Atlassian  + =70lpa -----------> cloud and infra =90+ -> AI ML or blockchain or any 
 
 ## Backend(java+go) -> Devops -> SRE -> blockchain Infrastructure/AI Infrastructure/ Data Infrastructure
 
