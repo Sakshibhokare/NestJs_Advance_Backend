@@ -7,6 +7,42 @@ https://youtu.be/IJkYipYNEtI?si=dOWuCabgpitBR6Ki Redis, pubsub, message queue
 
 ## Plan: Java and Go master Backend(DSA) + System Design(LLD and HLD) and Distributed System+ AWS + Devops + Core subjects + gen Ai agentic Ai + basic front end + managerial round ======== Atlassian  + =70lpa -----------> cloud and infra =90+ -> AI ML or blockchain or any 
 
+🧭 Final Optimized Plan (Updated)
+# 🎯 Core (75–80%)
+Java
+DSA
+System Design (HLD + LLD)
+Backend Projects (VERY important)
+# 🎯 Secondary (15–20%)
+Go
+AWS basics
+DB deep knowledge
+API design
+Core subjects (OS, CN, DBMS — focused)
+distributed system(kafka, redis, websocket, pubsub etc)
+# 🎯 Bonus (5%)
+Basic frontend
+GenAI (optional)
+# 🎯 Parallel Track (MUST ADD)
+✅ Managerial round prep (weekly practice)
+✅ Mock interviews
+✅ Communication practice
+# 🏁 Final Honest Advice
+
+👉 Don’t treat:
+
+Core subjects as theory subjects ❌
+Managerial round as HR formality ❌
+
+# Instead:
+
+Core subjects → use them in system design answers
+Managerial → sell your projects + thinking
+# 💡 Golden Formula
+
+Backend depth + clear thinking + good communication = ₹30+ LPA roles
+
+
 ## Backend(java+go) -> Devops -> SRE -> blockchain Infrastructure/AI Infrastructure/ Data Infrastructure
 
 You’re already on a strong path. These things are **force multipliers**, not new mountains.
